@@ -23,6 +23,11 @@ function start(port) {
     app.listen(port, ()=> console.log(`Running on Port ${port}`))
 }
 
+app.get('/', (req, res)=> {
+    res.send('this is home page!!! :D :D :D')
+});
+
+
 app.use('*', notFoundHandler);
 app.use(errorHandler);
 

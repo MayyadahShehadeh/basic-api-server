@@ -13,19 +13,6 @@ describe('my API Server', ()=> {
         const response = await request.get('/asd'); // async
         expect(response.status).toEqual(404);
     });
-
-    //  1. callbacks ---> Promises (Promise.then() ) ----> Async/Await
-    
-    it('handles my internal server errors', async () => {
-        const response = await request.post('/bad'); // async
-        expect(response.status).toEqual(500);
-    });
-    
-    it('get data from /data ', async () => {
-        const response = await request.get('/data'); // async
-        expect(response.status).toEqual(200);
-        expect(typeof response.body).toEqual('object'); // superagent is behind this 
-    });
     
     it('/ route works', async () => {
         const response = await request.get('/'); // async
